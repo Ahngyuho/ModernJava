@@ -122,5 +122,7 @@ public class FilteringApples {
         List<Integer> numbers = Arrays.asList(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
         List<Integer> evenNumbers = filter(numbers, (Integer i) -> i % 2 == 0);
 
+        Comparator<Apple> comparing = Comparator.comparing(apple -> apple.getWeight());
+        inventory.sort(comparing);
     }
 }

@@ -1,37 +1,40 @@
 package chapter02;
 
-public class Apple implements Comparable<Apple>{
-    private int weight;
-    private Color color;
+import chapter03.Fruit;
+
+public class Apple extends Fruit{
+
+    public Apple(){
+        super();
+    }
+
+    public Apple(Integer weight) {
+        super(weight);
+    }
 
     public Apple(int weight, Color color) {
-        this.weight = weight;
-        this.color = color;
+        super(weight,color);
     }
 
     public int getWeight() {
-        return weight;
+        return super.getWeight();
     }
 
     public void setWeight(int weight) {
-        this.weight = weight;
+        super.setWeight(weight);
     }
 
     public Color getColor() {
-        return color;
+        return super.getColor();
     }
 
     public void setColor(Color color) {
-        this.color = color;
+        super.setColor(color);
     }
 
     @Override
     public String toString() {
-        return String.format("Apple {color=%s, weight=%d}", color, weight);
+        return String.format("Apple {color=%s, weight=%d}", super.getWeight(), super.getColor());
     }
 
-    @Override
-    public int compareTo(Apple o) {
-        return this.weight - o.getWeight();
-    }
 }
