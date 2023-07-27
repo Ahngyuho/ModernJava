@@ -1,6 +1,6 @@
 package chapter02;
 
-public class Apple {
+public class Apple implements Comparable<Apple>{
     private int weight;
     private Color color;
 
@@ -28,5 +28,10 @@ public class Apple {
     @Override
     public String toString() {
         return String.format("Apple {color=%s, weight=%d}", color, weight);
+    }
+
+    @Override
+    public int compareTo(Apple o) {
+        return this.weight - o.getWeight();
     }
 }
