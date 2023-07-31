@@ -26,7 +26,7 @@ public class ExecuteAround {
     public static void main(String... args) throws IOException{
         //br 로 할 수 있는 동작을 마음대로 지정
         //함수명이 processFile 이므로 file 에대한 작업이라는 것을 함수명이나 doc 을 통해 확인해야 할거 같음
-//        processFile(br -> br.readLine() + br.readLine());
+        processFile(br -> br.readLine() + br.readLine());
 
         List<String> listOfString = new ArrayList<>();
 
@@ -52,6 +52,10 @@ public class ExecuteAround {
 
         List<Integer> StringToInteger = map(Arrays.asList("123", "456", "789"), s -> Integer.parseInt(s));
         List<Integer> MethodRef = map(Arrays.asList("123", "456", "789"), Integer::parseInt);
+
+        List<Apple> lambdaApple = new ArrayList<>();
+
+        lambdaApple.sort((a1, a2) -> a1.getWeight() - a2.getWeight());
 
 
 
@@ -94,7 +98,6 @@ public class ExecuteAround {
     public static String processFile(BufferReaderProcessor p) throws IOException{
         try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
             //이 br이 하는 역할을 동작 파라미터로 받음
-
             return p.process(br);
         }
     }
@@ -107,10 +110,13 @@ public class ExecuteAround {
         return result;
     }
 
-    //함수명 인터페이스
+    //함수형 인터페이스
     public interface BufferReaderProcessor{
         String process(BufferedReader b) throws IOException;
     }
+
+
+
 
     public static  <T, R> List<R> map(List<T> list, Function<T, R> f) {
         List<R> result = new ArrayList<>();
