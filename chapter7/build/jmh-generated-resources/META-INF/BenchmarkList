@@ -1,0 +1,2 @@
+JMH S 32 parallel.ParallelStreamBenchmark S 72 parallel.jmh_generated.ParallelStreamBenchmark_parallelRangedSum_jmhTest S 17 parallelRangedSum S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 12 MILLISECONDS E E 
+JMH S 32 parallel.ParallelStreamBenchmark S 64 parallel.jmh_generated.ParallelStreamBenchmark_rangedSum_jmhTest S 9 rangedSum S 11 AverageTime E A 1 1 1 E E E E E E E I 1 2 E E L 2 6 -Xms4G 6 -Xmx4G E E E U 12 MILLISECONDS E E 
